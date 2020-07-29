@@ -1,0 +1,36 @@
+<h1>Empresa 01</h1>
+<table>
+    <tr *ngFor="let producto of productos">
+        <td>
+            {{producto.id}} , {{producto.nombre}} <button class="btn btn-primary" (click) = "addCarrito(producto)">AGREGAR</button>
+        </td>
+    </tr>
+</table>
+
+<h1>Pedido</h1>
+<!--Table-->
+<table id="tablePreview" class="table table-dark table-striped">
+<!--Table head-->
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Pedido</th>
+        <th>Cantidad</th>
+        <th>Descripcion</th>
+    </tr>
+    </thead>
+    <!--Table head-->
+    <!--Table body-->
+    <tbody>
+    <tr *ngFor="let producto of productosCarrito">
+        <th scope="row">{{producto.id}}</th>
+        <td>{{producto.nombre}}</td>
+        <td>{{producto.cantidad}}</td>
+        <td>{{producto.descripcion}}</td>
+    </tr>
+    </tbody>
+    <!--Table body-->
+</table>
+<button class="btn btn-success btn-lg">Registrar</button>
+<button class="btn btn-danger btn-lg" (click) = "limpiarCarrito()" >Limpiar</button>
+    <!--Table-->
